@@ -370,7 +370,7 @@ public class DatingDaoImp implements DatingDao{
             UserInfo u=(UserInfo)item;
             int match=0;
             for(int i=0;i<regx.length;i++) {
-                int index = u.getUsername().indexOf(regx[i]);
+                int index = u.getLabel1().indexOf(regx[i]);
                 if(index!=-1){
                     match+=1;
                 }

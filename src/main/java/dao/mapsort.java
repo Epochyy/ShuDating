@@ -15,7 +15,7 @@ public class mapsort {
             @Override
             public int compare(Map.Entry<String, Integer> arg0,
                                Map.Entry<String, Integer> arg1) {
-                return arg0.getValue() - arg1.getValue();
+                return arg1.getValue() - arg0.getValue();
             }
         });
         Map newMap = new LinkedHashMap();
@@ -24,4 +24,5 @@ public class mapsort {
         }
         return newMap;
     }
+
 }
