@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+    <class name="UserInfo" table="userinfo" lazy="false">
+        <id name="id" column="id" type="int">
+            <generator class="identity"/>
+        </id>
+        <property name="username" column="username" type="string"/>
+        <property name="password" column="password" type="string"/>
+        <property name="realname" column="realname" type="string"/>
+        <property name="gender" column="gender" type="string"/>
+        <property name="age" column="age" type="integer"/>
+        <property name="sexlike" column="sexlike" type="string"/>
+        <property name="photo" column="photo" type="string"/>
+        <property name="motto" column="motto" type="string"/>
+        <property name="requirement" column="requirement" type="string"/>
+        <property name="phone" column="phone" type="string"/>
+        <property name="qq" column="qq" type="string"/>
+        <property name="label1" column="label1" type="string"/>
+        <!--<property name="label2" column="label2" type="integer"/>-->
+        <!--<property name="label3" column="label3" type="integer"/>-->
+        <!--<property name="label4" column="label4" type="integer"/>-->
+        <!--<property name="label5" column="label5" type="integer"/>-->
+        <!--<property name="label6" column="label6" type="integer"/>-->
+        <!--<property name="label7" column="label7" type="integer"/>-->
+    </class>
+</hibernate-mapping>

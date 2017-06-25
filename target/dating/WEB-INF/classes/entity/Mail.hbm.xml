@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+    <class name="entity.Mail" table="mail" lazy="false">
+        <id name="id" column="id" type="integer">
+            <generator class="identity"/>
+        </id>
+        <property name="sender" column="sender" type="integer"/>
+        <property name="receiver" column="receiver" type="integer"/>
+        <property name="time" column="time" type="timestamp"/>
+        <property name="mail" column="mail" type="string"/>
+        <property name="ifread" column="ifread" type="integer"/>
+    </class>
+</hibernate-mapping>
