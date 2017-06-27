@@ -247,7 +247,7 @@ public class DatingDaoImpTest {
     @Test
     public void testSearchUser() throws Exception {
     //TODO: Test goes here...
-        String regx="电视";
+        String []regx={"电视","电影"};
         DatingDaoImp d=new DatingDaoImp();
         List list=d.searchUser("yy",regx);
         for (Object item:list
