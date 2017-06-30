@@ -4,11 +4,12 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@page import="model.*"%>
+<%@page import="entity.*"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="dao.DatingDaoImp" %>
 
-<%User me=(User)session.getAttribute("user");%>
+<%UserInfo me=(UserInfo)session.getAttribute("user");%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -51,7 +52,7 @@
                         <a class="i-link" href="search.jsp" title="搜索"><span>搜索速配</span></a>
                     </li>
                     <div class="out">
-                        <li class="i-link"> <a href="#"><%=me.getUsername() %>, 欢迎登陆<br></a></li>
+                        <li class="i-link"> <a href="#"><%=me.getUsername() %>, 欢迎登录<br></a></li>
                         <li class="i-link"> <a href="esc.jsp">注销</a></li>
                     </div>
                 </ul>
@@ -69,12 +70,11 @@
                         <img class="bg" src="" style="display: none">
                         <div class="info">
                             <div>
-                                <%--<div class="name"><span><%=me.getUsername() %></span></div>--%>
-                                <div class="name"><span>yy</span></div>
+                                <div class="name"><span><%=me.getUsername() %></span></div>
 
                             </div>
                         </div>
-                        <%--<div class="face"><img src="<%=me.getPhoto() %>" alt="这是头像"></div>--%>
+                        <div class="face"><img src="<%=me.getPhoto() %>" alt="这是头像"></div>
                     </div>
 
                 </div>
@@ -97,7 +97,10 @@
 
                 <div class="ct">
                     <ul class="stm-lst">
-                        <%  ArrayList al=(ArrayList)session.getAttribute("latestnews");
+                        <%
+                            DatingDaoImp d = new DatingDaoImp();
+                            //ArrayList al=(ArrayList)session.getAttribute("latestnews");
+                            ArrayList al=(ArrayList) d.getLatestNews();
                             Iterator iter=al.iterator();
                             while(iter.hasNext()){
                                 News ly=(News)iter.next();
@@ -119,7 +122,7 @@
                                     </div>
 
                                     <div class="desc">
-                                        <%=ly.getMessage() %>
+                                        <%=ly.getNews() %>
                                     </div>
                                     <div class="vb">
                                         <a href="#" target="_blank" toggle=""><img class="cvr" src="缩略图" alt="假装这里有图"></a>

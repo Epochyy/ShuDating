@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -40,16 +40,6 @@
                         <li class="home">
                             <a class="i-link" href="index.jsp" title="首页"><span>首页</span></a>
                         </li>
-                        <!--<li class="hbili"><a class="i-link" href="#" title="画友">画友</a></li>
-<li class="b-gc" hasframe="true">
-<a class="i-link" href="#" title="游戏中心">游戏中心</a>
-</li>
-<li class="live" hasframe="true">
-<a class="i-link" target="_blank" href="//live.bilibili.com" title="直播">直播</a>
-<div class="i_div stream" data-frame="stream"></div>
-</li>
-<li class="b-zb"><a class="i-link" target="_blank" href="//bmall.bilibili.com/#!/" title="周边">周边</a></li>
-<li style='display:none' class="b-ml"><a class="i-link" target="_blank" href="//bml.bilibili.com/index2016/?nav" title="BML">BML</a></li>-->
                     </ul>
 
                 </div>
@@ -90,18 +80,6 @@
 
                     </div>
 
-
-                    <!--
-                                        <div class="info_list verify_bar clearfix">
-                                            <div class="tit">验证码：</div>
-                                            <div class="inp verify">
-                                                <input node-type="verifycode" name="pincode" type="text" class="W_input" value="" />
-                                                <a href="javascript:void(0);"><img action-type="btn_change_verifycode" node-type="btn_change_verifycode" src="/signup/v5/pincode/pincode.php?lang=zh&sinaId=f5e9cf3c4feaac329d4b65b544a3ac8c&r=1494389829" alt="" /></a>
-                                                <a href="javascript:void(0)" action-type="btn_change_verifycode" title="看不清，换一张">换一换</a>
-                                            </div>
-                                            <div class="tips verify_code_tip" node-type="verifycode_tip"></div>
-                                        </div>
-                    -->
 
                     <div class="info_list clearfix">
                         <div class="info_submit clearfix">
