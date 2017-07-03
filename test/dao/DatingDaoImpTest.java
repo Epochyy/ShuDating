@@ -13,7 +13,7 @@ import java.util.List;
 /** 
 * DatingDaoImp Tester. 
 * 
-* @author <Authors name> 
+* @author <易媛>
 * @since <pre>六月 24, 2017</pre> 
 * @version 1.0 
 */ 
@@ -247,7 +247,7 @@ public class DatingDaoImpTest {
     @Test
     public void testSearchUser() throws Exception {
     //TODO: Test goes here...
-        String []regx={"电视","电影"};
+        String []regx={"影视音乐"};
         DatingDaoImp d=new DatingDaoImp();
         List list=d.searchUser("yy",regx);
         for (Object item:list
@@ -264,6 +264,10 @@ public class DatingDaoImpTest {
     @Test
     public void testAddFriend() throws Exception {
     //TODO: Test goes here...
+        UserInfo user=new UserInfo();
+        user.setId(1);
+        DatingDaoImp d=new DatingDaoImp();
+        d.addFriend(user,2);
     }
 
     /**
@@ -348,10 +352,10 @@ public class DatingDaoImpTest {
     @Test
     public void testUpdateIfRead() throws Exception {
     //TODO: Test goes here...
-        Mail m=new Mail();
-        m.setId(1);
-        DatingDaoImp d=new DatingDaoImp();
-        d.updateIfRead(m);
+//        Mail m=new Mail();
+//        m.setId(1);
+//        DatingDaoImp d=new DatingDaoImp();
+//        d.updateIfRead(m);
     }
 
     /**

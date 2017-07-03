@@ -1,44 +1,39 @@
 package action;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
-
-import model.User;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-import db.DB;
+import dao.*;
+import entity.*;
 
 public class ShowMessage extends ActionSupport {
-	private User friends;
+	private UserInfo friends;
 
-	public User getFriends() {
+	public UserInfo getFriends() {
 		return friends;
 	}
 
-	public void setFriends(User friends) {
+	public void setFriends(UserInfo friends) {
 		this.friends = friends;
 	}
 
 	public String execute() throws Exception {
 		try {
-			DB db = new DB();
+			DatingDaoImp db = new DatingDaoImp();
 			ActionContext context = ActionContext.getContext();
 			Map session = context.getSession();
 			int friendid = friends.getId();
-			User myfriend = new User();
-			myfriend = db.getMyFriend(friendid);
+			UserInfo myfriend = new UserInfo();
+			myfriend = db.getUserById(friendid);
 			session.put("friend", myfriend);
-			User user1 = (User) session.get("user");
-			ArrayList a3 = db.getHistoryMessage(user1, myfriend);
+			UserInfo user1 = (UserInfo) session.get("user");
+			ArrayList a3 = (ArrayList) db.getHistoryMessage(user1, myfriend);
 			session.put("historymessage", a3);
 			db.updateIfRead(user1, myfriend);
-			// ArrayList a1=db.ShowAllFriends(user1);
-			// session.put("friendstable",a1);
 			return "success";
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return "error";

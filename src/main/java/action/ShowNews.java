@@ -3,22 +3,21 @@ package action;
 import java.util.ArrayList;
 import java.util.Map;
 
-import model.News;
-import model.User;
+import entity.*;
 
 import com.opensymphony.xwork2.ActionContext;
 
-import db.DB;
+import dao.*;
 
 public class ShowNews {
 	private News news;
 	public String execute() throws Exception {
 		try {
-			DB db = new DB();
+			DatingDaoImp db = new DatingDaoImp();
 			ActionContext context = ActionContext.getContext();
 			Map session = context.getSession();
-			User user1 = (User)session.get("user");
-			ArrayList al=db.findMyNews(user1);
+			UserInfo user1 = (UserInfo) session.get("user");
+			ArrayList al=(ArrayList) db.getMyNews(user1);
 			session.put("MyNews", al);
 			return "success";
 			

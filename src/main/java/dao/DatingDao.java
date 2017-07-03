@@ -34,8 +34,8 @@ public interface DatingDao {
     List getReceiveMail(UserInfo user);//收到的消息
     List getHistoryMessage(UserInfo user1,UserInfo user2);//消息记录
     boolean sendMessage(UserInfo user1,UserInfo user2,String mail);
-    //boolean updateIfRead(UserInfo user1,UserInfo user2);
-    boolean updateIfRead(Mail mail);
+    boolean updateIfRead(UserInfo user1, UserInfo user2);
     boolean deleteFriend(UserInfo user,int fid);
     boolean removeLables(String label,UserInfo user);
+    boolean addLoveWall(UserInfo user,String text);//新增表白墙
 }

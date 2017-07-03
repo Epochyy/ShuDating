@@ -12,10 +12,21 @@ import java.util.Objects;
 @Entity
 @Table(name = "friend", schema = "dating")
 public class Friend {
+    private int id;
     private int id1;
     private int id2;
 
     @Id
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Basic
     @Column(name = "id1")
     public int getId1() {
         return id1;

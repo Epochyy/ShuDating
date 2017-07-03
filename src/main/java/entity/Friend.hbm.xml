@@ -4,9 +4,10 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="entity">
     <class name="Friend" table="friend" lazy="false">
-        <id name="id1" column="id1" type="integer">
+        <id name="id" column="id" type="integer">
             <generator class="identity"/>
         </id>
+        <property name="id1" column="id1" type="java.lang.Integer"/>
         <property name="id2" column="id2" type="integer"/>
     </class>
 </hibernate-mapping>

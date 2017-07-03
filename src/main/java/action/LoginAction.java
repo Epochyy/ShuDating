@@ -10,24 +10,29 @@ public class LoginAction extends ActionSupport{
 	public UserInfo getUser() {
 		return this.user;
 	}
-
+	
 	public void setUser(UserInfo user) {
 		this.user = user;
 	}
+	/*public void validate() { //手工方式验证登录的时候用户名密码是否是空
+		if (user.getUsername() == null || user.getUsername().trim().equals("")) {
+			addFieldError("user.username", "请输入用户名");
+		}
+		if (user.getPassword() == null ||user.getPassword().trim().equals("")) {
+			addFieldError("user.password", "请输入密码");
+		}
+   }*/
 	public String execute() throws Exception {
 		DatingDaoImp db = new DatingDaoImp();
-
-		System.out.println(user.getUsername());
-		System.out.println(user.getPassword());
 		UserInfo user1 = db.getUserByName(user.getUsername());
 		if(user1.getPassword().equals(user.getPassword())){
-			ServletActionContext.getRequest().getSession().setAttribute("user",user1);
+			ServletActionContext.getContext().getSession().put("user",user1);
 			return "success";
 		}
 		else {
 			return "error";
 		}
 	}
-
+	
 
 }

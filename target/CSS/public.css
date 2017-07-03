@@ -1,0 +1,43 @@
+body{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+.header{
+	background-color:rgb(34,34,34);
+	width: 100%;
+	height: 50px;
+	color: white;
+	
+}
+.text{
+	float: left;
+	margin-left:10px;
+	font-size: 30px;
+}
+.exit{
+	margin: 10px 10px;
+	float: right;
+	color: white;
+}
+.exit a{
+	color: white;
+}
+.nav{
+	width: 250px;
+	height: 100%;
+	float: left;
+	background-color: rgb(245,245,245);
+	position: fixed;
+}
+.nav ul li{
+	list-style: none;
+	height: 30px;	
+}
+.view{
+	position: absolute;
+	margin-left:500px;
+	height: 700px;
+	//background-color: red;
+}

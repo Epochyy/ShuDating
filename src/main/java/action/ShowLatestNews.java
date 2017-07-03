@@ -1,19 +1,17 @@
 package action;
 
-import java.util.ArrayList;
-import java.util.Map;
-
+import java.util.*;
+import entity.*;
+import dao.*;
 import com.opensymphony.xwork2.ActionContext;
-
-import db.DB;
 
 public class ShowLatestNews {
 	public String execute() throws Exception {
 		try {
-			DB db=new DB();
+			DatingDaoImp db=new DatingDaoImp();
 			ActionContext context=ActionContext.getContext(); 
 			Map session=context.getSession();
-			ArrayList a=db.ShowLatestNews();
+			ArrayList a=(ArrayList) db.getLatestNews();
 			System.out.print(a);
 			session.put("latestnews", a);
 			return "success";

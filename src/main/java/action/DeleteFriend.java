@@ -4,38 +4,38 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
-import model.User;
+import dao.*;
+import entity.*;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-import db.DB;
-
 public class DeleteFriend extends ActionSupport {
-	private User friends;
+	private UserInfo friends;
 
-	public User getFriends() {
+	public UserInfo getFriends() {
 		return friends;
 	}
 
-	public void setFriends(User friends) {
+	public void setFriends(UserInfo friends) {
 		this.friends = friends;
 	}
 
 	public String execute() throws Exception {
-		DB db = new DB();
+		DatingDaoImp db = new DatingDaoImp();
 		try {
 			ActionContext context = ActionContext.getContext();
 			Map session = context.getSession();
-			User user1 = (User) session.get("user");
+			UserInfo user1 = (UserInfo) session.get("user");
 			int friendid = friends.getId();
+			//É¾³ý
 			db.deleteFriend(user1, friendid);
-			ArrayList a1 = db.ShowAllFriends(user1);
+			ArrayList a1 = (ArrayList) db.getAllFriend(user1);
 			session.put("friendstable", a1);
-			ArrayList a = db.getMail(user1);
+			ArrayList a = (ArrayList) db.getReceiveMail(user1);
 			session.put("mail", a);
 			return "success";
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return "error";

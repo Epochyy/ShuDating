@@ -3,14 +3,13 @@ package action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
-
-import model.Mail;
-import model.User;
+import java.util.List;
+import java.util.ArrayList;
+import dao.*;
+import entity.*;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-
-import db.DB;
 
 public class SendMessage extends ActionSupport {
 	private Mail message;
@@ -24,17 +23,19 @@ public class SendMessage extends ActionSupport {
 	}
 
 	public String execute() throws ClassNotFoundException {
-		DB db = new DB();
+		DatingDaoImp db = new DatingDaoImp();
 		try {
 			ActionContext context = ActionContext.getContext();
 			Map session = context.getSession();
-			User user1 = (User) session.get("user");
-			User user2 = (User) session.get("friend");
-			db.Sendmessage(user1, user2, message.getMail());
-			ArrayList a3 = db.getHistoryMessage(user1, user2);
+			UserInfo user1 = (UserInfo) session.get("user");
+			UserInfo user2 = (UserInfo) session.get("friend");
+			db.sendMessage(user1, user2, message.getMail());
+			ArrayList a3 = new ArrayList();
+			//a3.AddRange(db.getHistoryMessage(user1, user2));
+			a3 = (ArrayList) db.getHistoryMessage(user1, user2);
 			session.put("historymessage", a3);
 			return "success";
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return "error";

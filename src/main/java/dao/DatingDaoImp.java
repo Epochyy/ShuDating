@@ -1,9 +1,6 @@
 package dao;
 
-import entity.Friend;
-import entity.Mail;
-import entity.News;
-import entity.UserInfo;
+import entity.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import sessionfactory.HibernateSessionFactory;
@@ -49,6 +46,7 @@ public class DatingDaoImp implements DatingDao{
         return user;
     }
 
+    //添加用户时同时添加相关信息，注册时直接调用该函数
     @Override
     public boolean addUser(UserInfo userInfo) {
         Session session = HibernateSessionFactory.getSession();
@@ -57,6 +55,12 @@ public class DatingDaoImp implements DatingDao{
         try{
             ts = session.beginTransaction();
             userInfo.setPassword(userInfo.getPassword());
+            userInfo.setRealname(userInfo.getRealname());
+            userInfo.setGender(userInfo.getGender());
+            userInfo.setAge(userInfo.getAge());
+            userInfo.setSexlike(userInfo.getSexlike());
+            userInfo.setPhone(userInfo.getPhoto());
+            userInfo.setPhoto(userInfo.getPhoto());
             session.save(userInfo);
             ts.commit();
         } catch(Exception e) {
@@ -335,8 +339,8 @@ public class DatingDaoImp implements DatingDao{
     public List getLatestNews() {
         Session session = HibernateSessionFactory.getSession();
         Transaction ts = session.beginTransaction();
-        Query query = session.createQuery("from News as n order by n.id desc");
-        query.setMaxResults(10);
+        Query query = session.createQuery("from LoveWall as n order by n.id desc");
+        query.setMaxResults(4);
         List list=query.list();
         ts.commit();
         HibernateSessionFactory.closeSession();
@@ -370,9 +374,12 @@ public class DatingDaoImp implements DatingDao{
             UserInfo u=(UserInfo)item;
             int match=0;
             for(int i=0;i<regx.length;i++) {
-                int index = u.getLabel1().indexOf(regx[i]);
-                if(index!=-1){
-                    match+=1;
+               // System.out.println(u.getUsername());
+                if(u.getLabel1()!=null) {
+                    int index = u.getLabel1().indexOf(regx[i]);
+                    if (index != -1) {
+                        match += 1;
+                    }
                 }
             }
             if(match!=0){
@@ -390,6 +397,32 @@ public class DatingDaoImp implements DatingDao{
         ts.commit();
         HibernateSessionFactory.closeSession();
         return users;
+    }
+
+    @Override
+    public boolean addLoveWall(UserInfo user, String text) {
+        Session session = HibernateSessionFactory.getSession();
+        Transaction ts = null;
+        boolean flag=true;
+        LoveWall n=new LoveWall();
+        n.setText(text);
+        n.setTime(new Timestamp(System.currentTimeMillis()));
+        n.setUid(user.getId());
+        n.setUsername(user.getUsername());
+        try{
+            ts = session.beginTransaction();
+            session.save(n);
+            ts.commit();
+        } catch(Exception e) {
+            if(ts!=null)
+                ts.rollback();
+            System.out.println("添加失败！");
+            flag=false;
+            e.printStackTrace();
+        } finally {
+            HibernateSessionFactory.closeSession();
+        }
+        return flag;
     }
 
     @Override
@@ -487,15 +520,17 @@ public class DatingDaoImp implements DatingDao{
         return flag;
     }
 
+    //修改传递参数mail为user1 user2以及相应hql语句
     @Override
-    public boolean updateIfRead(Mail mail) {
+    public boolean updateIfRead(UserInfo user1, UserInfo user2) {
         Session session = HibernateSessionFactory.getSession();
         Transaction ts = null;
         boolean flag=true;
         try {
             ts = session.beginTransaction();
-            Query query = session.createQuery("update Mail m set m.ifread=1 where m.id=:mid");
-            query.setInteger("mid", mail.getId());
+            Query query = session.createQuery("update Mail m set m.ifread=1 where m.sender=:sid and m.receiver=:rid");
+            query.setInteger("sid", user1.getId());
+            query.setInteger("rid", user2.getId());
             query.executeUpdate();
             ts.commit();
         } catch(Exception e) {
