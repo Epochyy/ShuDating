@@ -76,13 +76,13 @@ public class DatingDaoImp implements DatingDao{
     }
 
     @Override
-    public boolean alterUserName(String username,UserInfo user) {
+    public boolean alterRealName(String username,UserInfo user) {
         Session session = HibernateSessionFactory.getSession();
         Transaction ts = null;
         boolean flag=true;
         try {
             ts = session.beginTransaction();
-            Query query = session.createQuery("update UserInfo u set u.username=:newName where u.id=:uid");
+            Query query = session.createQuery("update UserInfo u set u.realname=:newName where u.id=:uid");
             query.setString("newName", username);
             query.setInteger("uid", user.getId());
             query.executeUpdate();
@@ -244,6 +244,78 @@ public class DatingDaoImp implements DatingDao{
     }
 
     @Override
+    public boolean alterPhone(String phone,UserInfo user) {
+        Session session = HibernateSessionFactory.getSession();
+        Transaction ts = null;
+        boolean flag=true;
+        try {
+            ts = session.beginTransaction();
+            Query query = session.createQuery("update UserInfo u set u.phone=:newPhone where u.id=:uid");
+            query.setString("newPhone", phone);
+            query.setInteger("uid", user.getId());
+            query.executeUpdate();
+            ts.commit();
+        } catch(Exception e) {
+            if(ts!=null)
+                ts.rollback();
+            flag=false;
+            System.out.println("ÐÞ¸ÄphoneÊ§°Ü£¡");
+            e.printStackTrace();
+        } finally {
+            HibernateSessionFactory.closeSession();
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean alterMotto(String motto,UserInfo user) {
+        Session session = HibernateSessionFactory.getSession();
+        Transaction ts = null;
+        boolean flag=true;
+        try {
+            ts = session.beginTransaction();
+            Query query = session.createQuery("update UserInfo u set u.motto=:newMotto where u.id=:uid");
+            query.setString("newMotto", motto);
+            query.setInteger("uid", user.getId());
+            query.executeUpdate();
+            ts.commit();
+        } catch(Exception e) {
+            if(ts!=null)
+                ts.rollback();
+            flag=false;
+            System.out.println("ÐÞ¸ÄmottoÊ§°Ü£¡");
+            e.printStackTrace();
+        } finally {
+            HibernateSessionFactory.closeSession();
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean alterRequirement(String requirement,UserInfo user) {
+        Session session = HibernateSessionFactory.getSession();
+        Transaction ts = null;
+        boolean flag=true;
+        try {
+            ts = session.beginTransaction();
+            Query query = session.createQuery("update UserInfo u set u.requirement=:newRequirement where u.id=:uid");
+            query.setString("newRequirement", requirement);
+            query.setInteger("uid", user.getId());
+            query.executeUpdate();
+            ts.commit();
+        } catch(Exception e) {
+            if(ts!=null)
+                ts.rollback();
+            flag=false;
+            System.out.println("ÐÞ¸ÄrequirementÊ§°Ü!");
+            e.printStackTrace();
+        } finally {
+            HibernateSessionFactory.closeSession();
+        }
+        return flag;
+    }
+
+    @Override
     public boolean alterLables(String[] labels,UserInfo user) {
         UserInfo u=null;
         u=getUserById(user.getId());
@@ -308,7 +380,7 @@ public class DatingDaoImp implements DatingDao{
         Session session = HibernateSessionFactory.getSession();
         Transaction ts = session.beginTransaction();
         List list = null;
-        Query query = session.createQuery("from News as n where n.uid=:userid");
+        Query query = session.createQuery("from News as n where n.uid=:userid order by time desc");
         query.setInteger("userid", user.getId());
         list = query.list();
         ts.commit();

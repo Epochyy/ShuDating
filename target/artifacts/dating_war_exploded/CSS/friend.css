@@ -1,0 +1,238 @@
+.security_content {
+    min-height: 832px !important;
+}
+
+.security-top {}
+
+.security-bottom {}
+
+
+#page-fans .list-item .cover {
+    border-radius: 48px;
+    overflow: visible
+}
+
+#page-fans .list-item img {
+    border-radius: 60px;
+    width: 60px;
+    height: 60px
+}
+
+#page-fans .list-item .content {
+    padding: 0 200px 0 0;
+    position: relative;
+    margin-left: 80px
+}
+
+#page-fans .list-item .title {
+    font-size: 16px;
+    line-height: 1
+}
+
+#page-fans .list-item .desc {
+    color: #6d757a;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    padding-right: 10px
+}
+
+#page-fans .list-item .tag-list {
+    margin: 5px 0 0 80px;
+    padding: 0
+}
+
+#page-fans .list-item .auth-description {
+    line-height: 14px;
+    font-size: 12px;
+    color: #6d757a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+#page-fans .list-item .auth-description.no-desc {
+    color: #99a2aa
+}
+
+#page-fans .modal-container.prohibit-modal .modal-wrapper {
+    width: 460px
+}
+
+#page-fans .modal-container.confirmdlg-modal .modal-wrapper {
+    width: 400px
+}
+
+#page-fans .modal-container.blacklist-modal .modal-wrapper {
+    width: 340px
+}
+
+#page-fans .modal-container .content-text {
+    color: #222;
+    font-size: 14px
+}
+
+#page-fans .modal-container .content-text em {
+    margin: 0 5px;
+    color: #00a1d6
+}
+
+#page-fans .modal-container .content-tip {
+    color: #99a2aa;
+    font-size: 12px
+}
+
+#page-fans .modal-container .switcher-container {
+    margin-top: 10px
+}
+
+#fans-list {
+    margin-top: -20px
+}
+
+.fans-charged {
+    background: #ff7e9c;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 6px;
+    width: 44px;
+    line-height: 18px
+}
+
+.fans-action {
+    position: absolute;
+    right: 0;
+    top: 20px
+}
+
+.fans-action-btn {
+    border: 1px solid #edf2f9;
+    border-radius: 4px;
+    color: #6d757a;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    float: left;
+    text-align: center;
+    line-height: 26px;
+    margin-left: 15px;
+    vertical-align: middle
+}
+
+.fans-action-btn:hover {
+    border-color: #00a1d6;
+    color: #00a1d6
+}
+
+.fans-action-btn.follow {
+    width: 66px
+}
+
+.fans-action-btn.unfollow {
+    background: #edf2f9;
+    color: #999;
+    width: 66px
+}
+
+.fans-action-btn.unfollow:hover {
+    border-color: #edf2f9;
+    color: #999
+}
+
+.fans-action-btn.message {
+    width: 66px
+}
+
+.fans-action-list {
+    background: url(//s1.hdslb.com/bfs/static/space/icons5.png) -1300px -597px;
+    height: 24px;
+    width: 24px;
+    position: relative
+}
+
+.fans-action-list:hover {
+    background-position: -1364px -597px
+}
+
+.fans-action-list:hover .fans-action-popup-wrapper {
+    display: block
+}
+
+.fans-action-popup-wrapper {
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    padding-top: 5px;
+    z-index: 2
+}
+
+.fans-action-popup {
+    background: #fff;
+    border: 1px solid #ccd0d7;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .14);
+    color: #6d757a;
+    text-align: left;
+    width: 95px
+}
+
+.fans-action-popup-btn {
+    display: block;
+    line-height: 36px;
+    padding-left: 12px
+}
+
+.fans-action-popup-btn:hover {
+    background: #f1f3f7;
+    color: #00a1d6
+}
+
+.fans-unban {
+    width: 98px
+}
+
+#ban-checkbox {
+    color: #222
+}
+
+.content {
+    height: auto;
+    margin: 10px;
+    padding: 10px 30px;
+    border-radius: 3px;
+    border: 1px solid aliceblue;
+    vertical-align: middle;
+}
+
+.btn_addFriend {
+    float: right;
+    padding: 5px 10px;
+    line-height: 25px;
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 5px;
+
+    vertical-align: middle;
+}
+
+.btn_addFriend:hover {
+    background-color: darkseagreen;
+    color: aliceblue;
+}
+
+.head_portrait {
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.mess {
+    margin-left: 100px;
+    margin-top: -30px;
+}

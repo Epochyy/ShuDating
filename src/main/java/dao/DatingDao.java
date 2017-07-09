@@ -15,7 +15,7 @@ public interface DatingDao {
     UserInfo getUserById(int id);
     UserInfo getUserByName(String username);
     boolean addUser(UserInfo userInfo);
-    boolean alterUserName(String username,UserInfo user);
+    boolean alterRealName(String username,UserInfo user);
     boolean alterGender(String gender,UserInfo user);
     boolean alterPassword(String password,UserInfo user);
     boolean alterAge(int age,UserInfo user);
@@ -38,4 +38,7 @@ public interface DatingDao {
     boolean deleteFriend(UserInfo user,int fid);
     boolean removeLables(String label,UserInfo user);
     boolean addLoveWall(UserInfo user,String text);//ÐÂÔö±í°×Ç½
+    boolean alterPhone(String phone,UserInfo user);
+    boolean alterMotto(String motto,UserInfo user);
+    boolean alterRequirement(String requirement,UserInfo user);
 }

@@ -3,14 +3,13 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@page import="entity.*"%>
-<%UserInfo ly=(UserInfo) session.getAttribute("user");%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
     <base href="<%=basePath%>">
 
-    <title>My JSP 'ShowUserInfo.jsp' starting page</title>
+    <title>My JSP 'test.jsp' starting page</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -22,6 +21,7 @@
     -->
     <link href="CSS/info.css" rel=stylesheet type="text/css">
     <link href="CSS/base.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
@@ -31,21 +31,9 @@
             <div class="z_top_nav">
                 <ul>
                     <li class="home">
-                        <a class="i-link" href="showlnews" title="首页"><span>首页</span></a>
+                        <a class="i-link" href="#" title="首页"><span>首页</span></a>
                     </li>
-                    <li class="home">
-                        <a class="i-link" href="ShowUserInfo.jsp" title="个人空间">个人空间</a>
-                    </li>
-                    <li class="home">
-                        <a class="i-link" href="enterFriendTable" title="好友列表"><span>好友列表</span></a>
-                    </li>
-                    <li class="home">
-                        <a class="i-link" href="search" title="搜索"><span>搜索速配</span></a>
-                    </li>
-                    <div class="out">
-                        <li class="i-link"> <a href="#"><%=ly.getUsername() %>, 欢迎登陆<br></a></li>
-                        <li class="i-link"> <a href="esc.jsp">注销</a></li>
-                    </div>
+
                 </ul>
             </div>
         </div>
@@ -72,28 +60,22 @@
             <li class="f-list" style="cursor: default;"><a href="#" class="first-level" style="color: #99a2aa;cursor: default;">个人中心</a>
                 <ul class="child-list">
                     <li>
-                        <a href="shownews" id="home" title="首页">
+                        <a href="index.html" id="home" title="首页">
                             <i class="al-sy"></i>
-                            <span>我的动态</span>
+                            <span>首<b class="nbsp"></b>页</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="ShowUserInfo.jsp" id="setting">
+                        <a href="info.html" id="setting">
                             <i class="al-info"></i>
                             <span>我的信息</span>
                         </a>
                     </li>
                     <li>
-                        <a href="showfnews" id="setting">
-                            <i class="al-info"></i>
-                            <span>好友动态</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="updateLoveWall.jsp" id="setting">
-                            <i class="al-info"></i>
-                            <span>表白</span>
+                        <a href="protrait.html" id="face">
+                            <i class="al-tx"></i>
+                            <span>我的头像</span>
                         </a>
                     </li>
 
@@ -104,12 +86,12 @@
         </ul>
     </div>
 
-    <form onsubmit="return false;">
 
+    <form action="changeuserinfo" method="post" id="submitform" enctype="multipart/form-data">
         <div class="security-right">
-            <div class="sr-t">
-                <span class="tit-b"></span><span class="acc-sec">我的信息（<a href="changeuserinfo.jsp">编辑</a>）</span>
 
+            <div class="sr-t">
+                <span class="tit-b"></span><span class="acc-sec">我的信息</span>
             </div>
             <div class="sr-b">
                 <ul>
@@ -119,7 +101,7 @@
                                 用户名：
                             </p>
                             <div class="sbi-m">
-                                <%=ly.getUsername() %>
+
                             </div>
 
                         </div>
@@ -130,18 +112,7 @@
                                 真实姓名：
                             </p>
                             <div class="sbi-m">
-                                <%=ly.getRealname() %>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="sb-info">
-                            <p class="sbi-l">
-                                头像：
-                            </p>
-                            <div class="sbi-m">
-                                <img src="<%=ly.getPhoto()%>" width="200px" height="200px">
+                                <span></span>
                             </div>
                         </div>
                     </li>
@@ -151,7 +122,7 @@
                                 性别：
                             </p>
                             <div class="sbi-m">
-                                <%=ly.getGender() %>
+                                <span></span>
                             </div>
                         </div>
                     </li>
@@ -161,17 +132,34 @@
                                 年龄：
                             </p>
                             <div class="sbi-m">
-                                <%=ly.getAge() %>
+                                <span></span>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="sb-info">
                             <p class="sbi-l">
+                                交友意向：
+                            </p>
+                            <div class="sbi-m">
+                                <select name="user.sexlike" class="select">
+                                    <option value="保密">保密</option>
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                    <option value="男女均可">男女均可</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <div class="sb-info">
+                            <p class="sbi-l">
                                 个性签名：
                             </p>
                             <div class="sbi-m">
-                                <%=ly.getMotto() %>
+                                <textarea name="sign user.motto" id="" cols="30" rows="10" class="my-sign"></textarea>
                             </div>
                         </div>
                     </li>
@@ -181,47 +169,83 @@
                                 恋人画相：
                             </p>
                             <div class="sbi-m">
-                                <%=ly.getRequirement() %>
+                                <textarea name="sign user.requirement"  cols="30" rows="10" class="my-sign"></textarea>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="sb-info">
+                            <p class="sbi-l">
+                                电话：
+                            </p>
+                            <div class="sbi-m">
+                                <input name="sign user.requirement"  class="my-sign" value=""/>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="sb-info">
+                            <p class="sbi-l">
+                                电话：
+                            </p>
+                            <input type="hidden" name="gender" id="select_sex" value="保密" />
+                            <div class="sbi-m">
+                                <ul class="sex" id="sex_ul">
+                                    <li class="blue" data-sex="男">男</li>
+                                    <li data-sex="女">女</li>
+                                    <li data-sex="保密">保密</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="sb-info">
+                            <p class="sbi-l">
+                                交友目的：
+                            </p>
+                            <div class="sbi-m">
+                                <div class="control-btn-select">
+                                    <span>--请选择--</span><em></em>
+                                    <select name='datingtype' id='datingtype' class='enumselect'>
+                                        <option value='0' selected='selected'>--请选择--</option>
+                                        <option value='1'>网友</option>
+                                        <option value='2'>恋人</option>
+                                        <option value='3'>玩伴</option>
+                                        <option value='4'>共同兴趣</option>
+                                        <option value='5'>男性朋友</option>
+                                        <option value='6'>女性朋友</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="sb-info">
                             <p class="sbi-l">
-                                手机：
+                                爱好：
                             </p>
                             <div class="sbi-m">
-                                <%=ly.getPhone() %>
+                                <div class="control-btn-select">
+                                    <span>--请选择--</span><em></em>
+                                    <select name='marital' id='marital' class='enumselect'>
+                                        <option value='0' selected='selected'>--请选择--</option>
+                                        <option value='1'>未婚</option>
+                                        <option value='2'>已婚</option>
+                                        <option value='3'>离异</option>
+                                        <option value='4'>丧偶</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="sb-info">
-                            <p class="sbi-l">
-                                qq：
-                            </p>
-                            <div class="sbi-m">
-                                <%=ly.getQq() %>
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <li>
-                        <div class="sb-info">
-                            <p class="sbi-l">
-                                个性标签：
-                            </p>
-                            <div class="sbi-m">
-                                <%=ly.getLabel1() %>
-                            </div>
-                        </div>
-                    </li>
-
                 </ul>
             </div>
             <div class="sb-line">
             </div>
+            <a action-type="btn_submit" class="W_btn_big" suda-uatrack="key=tblog_register_page&value=register_now_button" href="javascript:void(0);" refake-type="submit" node-type="btn_submit" onclick="document.getElementById('submitform').submit();return false"><span>提交</span></a>
 
         </div>
     </form>
@@ -246,10 +270,9 @@
 <div class="footer">
     <div class="footer-wrp">
         <div class="footer-cnt clearfix">
-            <em>@夏季课程项目</em>
+            <em>@Java EE课程项目</em>
         </div>
     </div>
 </div>
-
 </body>
 </html>

@@ -63,7 +63,7 @@ public class registerAction {
 					
 					InputStream is=new FileInputStream(getUpload());
 					OutputStream os=new FileOutputStream("E:\\Tomcat 9.0\\webapps\\ROOT\\images\\"+uploadFileName);
-					OutputStream os2=new FileOutputStream("F:\\Java EE\\dating\\src\\main\\webapp\\images\\"+uploadFileName);
+					OutputStream os2=new FileOutputStream("F:\\JavaEE\\dating\\src\\main\\webapp\\images\\"+uploadFileName);
 					byte buffer[]=new byte[1024];   
 					int count=0;
 					while((count=is.read(buffer))>0){

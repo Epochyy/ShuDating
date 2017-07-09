@@ -1,0 +1,1196 @@
+@charset "utf-8";
+
+.z {
+    overflow: visible
+}
+
+.widescreen .main-inner {
+    width: 980px
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+body {
+    background: rgba(132, 180, 220, 0.99);
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    color: #333
+}
+
+a img {
+    border: 0
+}
+
+.b-head {
+    width: 100%
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+* html .clearfix {
+    zoom: 1
+}
+
+*:first-child + html .clearfix {
+    zoom: 1
+}
+
+.b-icon {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px
+}
+
+.b-icon.b-icon-tag {
+    background: url(//static.hdslb.com/tag/img/iconset.png) -231px -40px no-repeat;
+    width: 18px;
+    height: 16px
+}
+
+.b-icon.b-icon-refresh {
+    background: url(../../images/v3images/refresh.png) center center no-repeat
+}
+
+.stm-ly {
+    margin: 0px auto 20px auto;
+    position: relative
+}
+
+.stm-ly .usr {
+    position: relative;
+    background: white;
+    height: 170px;
+    border-bottom: 1px solid #ddd
+}
+
+.stm-ly .usr .face {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -42px;
+    background: white;
+    width: 84px;
+    height: 84px;
+    border-radius: 180px
+}
+
+.stm-ly .usr .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 85px
+}
+
+.stm-ly .usr .face img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -39px;
+    margin-left: -39px;
+    width: 78px;
+    height: 78px;
+    border-radius: 180px
+}
+
+.stm-ly .usr .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background: white
+}
+
+.stm-ly .usr .name span {
+    vertical-align: middle;
+    display: table-cell;
+    line-height: normal
+}
+
+.stm-ly .usr .name {
+    display: table;
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    width: 96%;
+    padding: 0 2%;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    top: 12px;
+    text-align: center
+}
+
+.stm-ly .usr .status {
+    width: 100%;
+    background: white;
+    position: absolute;
+    height: 32px;
+    bottom: 0
+}
+
+.stm-ly .usr .status li {
+    float: left;
+    width: 100%;
+    line-height: 100%;
+    font-size: 14px;
+    font-family: "Times News Roman", "宋体";
+    text-align: center;
+    height: 100%
+}
+
+.stm-ly .usr .status li span {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle
+}
+
+.stm-ly .icon {
+    background: url(/images/v3images/icons2.png) no-repeat;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle
+}
+
+.stm-ly .icon.icon-coin {
+    background-position: 1px -631px;
+    margin-right: 5px
+}
+
+.stm-ly .sd-l {
+    padding: 11px 0
+}
+
+.stm-ly .sd-l .ct {
+    color: #00a1d6;
+    position: absolute;
+    right: 10px;
+    font-weight: bold
+}
+
+.stm-ly .sd-l a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    padding: 0 10px;
+    line-height: 30px;
+    font-size: 14px;
+    font-family: "Times News Roman", "宋体", Arial, Helvetica, sans-serif;
+    height: 30px;
+    text-decoration: none;
+    color: #333
+}
+
+.stm-ly .sd-l a:hover {
+    background: #eee
+}
+
+.stm-ly .sd-l.sm {
+    padding-bottom: 26px
+}
+
+.stm-ly .sd-l.sm a {
+    padding-left: 40px;
+    line-height: 34px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif
+}
+
+.stm-ly .sd-l.sm a + a {
+    margin-top: 7px
+}
+
+.stm-ly .sd-l.lt {
+    padding: 0 0 10px 0
+}
+
+.stm-ly .sd-l.lt a {
+    color: #00a1d6;
+    font-size: 12px!important;
+    padding: 4px 14px;
+    height: 20px;
+    line-height: 20px
+}
+
+.stm-ly .fl-l {
+    padding-bottom: 18px;
+    position: relative
+}
+
+.stm-ly .fl-l li {
+    padding: 0 14px;
+    height: 50px;
+    position: relative;
+    overflow: hidden
+}
+
+.stm-ly .fl-l li .info .follow {
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    background: #00a1d6;
+    left: 2px;
+    padding: 0 7px;
+    border-radius: 2px;
+    border: 1px solid #0082b0
+}
+
+.stm-ly .fl-l li .info .follow:hover {
+    background: #0080a2
+}
+
+.stm-ly .fl-l li .info {
+    font-size: 12px;
+    margin-left: 54px;
+    position: relative;
+    overflow: hidden;
+    height: 50px
+}
+
+.stm-ly .fl-l li a {
+    text-decoration: none;
+    color: #333
+}
+
+.stm-ly .fl-l li .info .name {
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.stm-ly .fl-l.sq .face img {
+    border-radius: 0
+}
+
+.stm-ly .fl-l li .face {
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    margin-top: -21px
+}
+
+.stm-ly .vd-l {
+    padding: 10px 0 10px 0
+}
+
+.stm-ly .vd-l > a {
+    height: 120px;
+    display: block;
+    text-decoration: none;
+    color: #333
+}
+
+.stm-ly .vd-l .cvr {
+    display: block;
+    width: 120px;
+    height: 75px;
+    margin: 0 auto
+}
+
+.stm-ly .vd-l .title {
+    display: block;
+    padding-top: 6px;
+    font-size: 12px;
+    width: 130px;
+    height: 35px;
+    overflow: hidden;
+    margin: 0 auto
+}
+
+.stm-ly .vd-l a:hover > span {
+    color: #999
+}
+
+.stm-ly .vd-l a + a {
+    margin-top: 9px;
+    height: 120px;
+    overflow: hidden
+}
+
+.stm-ly .fl-l li .face img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -21px;
+    margin-left: -21px;
+    width: 42px;
+    height: 42px;
+    border-radius: 180px
+}
+
+.stm-ly .fl-l li + li {
+    margin-top: 12px
+}
+
+.stm-ly .sd-l.lt a:hover {
+    color: #0080a2;
+    background: transparent
+}
+
+.stm-ly .sec-tt {
+    font-weight: bold;
+    font-size: 15px;
+    padding: 12px 10px
+}
+
+.stm-ly > .sd.r .sec-tt {
+    padding: 15px 14px 8px 14px
+}
+
+.stm-ly > .sd.r .sec-tt .shf {
+    color: #00a1d6;
+    text-decoration: none;
+    font-weight: normal;
+    float: right;
+    line-height: 20px;
+    font-size: 12px
+}
+
+.stm-ly > .sd.r .sec-tt .shf:hover {
+    color: #0080a2
+}
+
+.stm-ly > .ct > .b-head {
+    width: auto
+}
+
+.stm-ly > .sd > .sec {
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid #ddd
+}
+
+.stm-ly > .sd > .sec + .sec {
+    margin-top: 18px
+}
+
+.stm-ly > .sd {
+    position: absolute;
+    top: 0;
+    transition: top .5s;
+    width: 180px
+}
+
+.stm-ly > .sd.l {
+    left: 0
+}
+
+.stm-ly > .sd.float {
+    overflow: hidden;
+    top: 10px;
+    left: 50%;
+    position: fixed
+}
+
+.stm-ly > .l.float {
+    margin-left: -490px;
+    margin-top: 43px;
+}
+
+.stm-ly > .r.float {
+    margin-left: 310px
+}
+
+.stm-ly > .sd.r {
+    right: 0
+}
+
+.stm-ly > .ct {
+    margin-left: 198px;
+    background: white;
+    border: 1px solid #ddd
+}
+
+.stm-ly .ct.dyn-tab {
+    margin-bottom: 20px
+}
+
+.stm-ly .ct .stm-filter {
+    height: 50px;
+    padding-left: 20px
+}
+
+.stm-ly .ct .stm-filter li {
+    height: 50px;
+    line-height: 50px;
+    border-radius: 0;
+    color: #222;
+    width: 120px;
+    padding: 0;
+    margin: 0;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    transition: background-color .2s
+}
+
+.stm-ly .ct .stm-filter li:hover {
+    background-color: transparent
+}
+
+.stm-ly .ct .stm-filter li.on {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    height: 51px
+}
+
+.stm-ly .stm-lst {
+    min-height: 600px;
+    background: #f5f5f5
+}
+
+.stm-ly .stm-lst .face {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    position: relative
+}
+
+.stm-ly .stm-lst .face + .face {
+    margin-left: 2px
+}
+
+.stm-ly .stm-lst .lside .face {
+    position: absolute;
+    left: 20px
+}
+
+.stm-ly .stm-lst .face img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 180px;
+    margin: 0 auto
+}
+
+.stm-ly .stm-lst .face.sp img {
+    border-radius: 0
+}
+
+.stm-ly .stm-lst .name {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 22px;
+    padding-bottom: 6px
+}
+
+.stm-ly .stm-lst .name a {
+    text-decoration: none;
+    color: #333
+}
+
+.stm-ly .stm-lst .name a:hover {
+    color: #777
+}
+
+.stm-ly .stm-lst span.sp {
+    font-weight: normal;
+    font-size: 12px;
+    color: white;
+    background: #f489ad;
+    padding: 4px 7px;
+    border-radius: 2px;
+    margin: 0 2px
+}
+
+.stm-ly .stm-lst .name span.sp {
+    margin-right: 6px
+}
+
+.stm-ly .stm-lst .hint {
+    font-size: 12px;
+    color: #bbb;
+    text-indent: 3px;
+    line-height: 22px
+}
+
+.stm-ly .stm-lst {
+    font-size: 12px;
+    height: auto;
+    overflow: hidden;
+    padding-top: 3px;
+    line-height: 20px
+}
+
+.stm-ly .stm-lst .vb {
+    height: 120px;
+    overflow: hidden;
+    transition: all .2s;
+    position: relative
+}
+
+.stm-ly .stm-lst .vb a {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.stm-ly .stm-lst .vb img.cvr {
+    margin: 10px 0;
+    width: 182px;
+    height: 112px
+}
+
+.stm-ly .stm-lst .vb .r {
+    padding-top: 15px;
+    padding-left: 170px
+}
+
+.stm-ly .stm-lst .vb .r .desc {
+    padding-top: 10px;
+    line-height: 26px;
+    color: #999
+}
+
+.stm-ly .stm-lst a {
+    text-decoration: none;
+    color: #00a1d6
+}
+
+.stm-ly .stm-lst a:hover {
+    color: #0080a2
+}
+
+.stm-ly .stm-lst li .lside,
+.stm-ly .stm-tag-push-wrp .lside {
+    width: 60px;
+    position: absolute;
+    left: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+    top: 0;
+    bottom: 0
+}
+
+.stm-ly .stm-lst li .rside,
+.stm-ly .stm-tag-push-wrp .rside {
+    padding-left: 64px;
+    min-height: 65px
+}
+
+.stm-ly .stm-lst li {
+    position: relative;
+    background: white
+}
+
+.stm-ly .stm-lst li:hover .share {
+    display: block
+}
+
+.stm-ly .stm-lst li + li {
+    border-top: 1px solid #ddd
+}
+
+.stm-ly .stm-lst .ur {
+    position: relative;
+    overflow: hidden;
+    margin-top: 11px;
+    border: 1px solid #ddd;
+    padding: 1px 10px;
+    padding-bottom: 30px
+}
+
+.stm-ly .stm-lst .ur .fl {
+    padding: 2px 5px
+}
+
+.stm-ly .stm-lst .ur .more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: #f5f5f5
+}
+
+.stm-ly .stm-lst span.dt {
+    float: right;
+    font-weight: normal;
+    color: #aaa;
+    font-size: 12px
+}
+
+.stm-ly .stm-lst .ur .fl .face {
+    width: 44px;
+    height: 44px
+}
+
+.stm-ly .stm-lst .ur .fl .face img {
+    width: 42px;
+    height: 42px;
+    margin-top: -21px;
+    margin-left: -21px
+}
+
+.stm-ly .stm-lst .ur .fl .face + .face {
+    margin-left: 11px
+}
+
+.stm-ly .stm-lst .ur .more a {
+    float: right;
+    color: #666;
+    padding-right: 5px;
+    line-height: 20px;
+    font-size: 12px
+}
+
+.stm-ly .stm-lst li .frm {
+    padding: 20px;
+    transition: all .2s;
+    position: relative
+}
+
+.stm-ly .stm-lst > li.open .vfrm {
+    display: block
+}
+
+.stm-ly .stm-lst > li.open .desc {
+    height: 0;
+    padding: 0
+}
+
+.stm-ly .stm-lst > li.open .frm {
+    padding-bottom: 5px
+}
+
+.stm-ly .stm-lst > li.open .vb {
+    height: 0
+}
+
+.stm-ly .stm-lst > li.open .ur {
+    height: 0;
+    padding: 0;
+    border: 0
+}
+
+.stm-ly .stm-lst .ivfrm {
+    border-top: 1px solid #ddd;
+    background: #f5f5f5;
+    padding-top: 40px;
+    position: relative
+}
+
+.stm-ly .stm-lst .vfrm {
+    position: relative;
+    width: 100%;
+    transition: height .2s;
+    display: none
+}
+
+.stm-ly .stm-lst .ur .more a:hover {
+    color: #aaa
+}
+
+.stm-ly .stm-lst .awrp {
+    height: 9px;
+    position: relative
+}
+
+.stm-ly .stm-lst .arrow-up {
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    z-index: 22px;
+    top: 1px
+}
+
+.stm-ly .stm-lst .vfrm .tbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    font-size: 12px
+}
+
+.stm-ly .stm-lst .vfrm .tbar .g {
+    height: 40px;
+    float: left;
+    line-height: 40px;
+    padding-left: 19px
+}
+
+.stm-ly .stm-lst .vfrm .tbar .g + .g {
+    padding-left: 25px
+}
+
+.stm-ly .stm-lst .vfrm .g.r {
+    float: right;
+    margin-right: 19px
+}
+
+.share {
+    border: 1px solid #ddd;
+    background: white;
+    display: none;
+    position: absolute;
+    float: right;
+    right: -1px;
+    bottom: -1px;
+    z-index: 999
+}
+
+.share a {
+    display: block;
+    float: left;
+    height: 32px;
+    min-width: 16px
+}
+
+.share .shr {
+    margin-right: 15px
+}
+
+.share .iw {
+    padding: 0 8px
+}
+
+.share .ico {
+    margin: 8px 0
+}
+
+.stm-ly .stm-lst .vfrm .vd {
+    height: 450px;
+    padding: 18px;
+    padding-top: 4px
+}
+
+.ico.renren {
+    background-position: 0 -208px
+}
+
+.ico.tqq {
+    background-position: 0 -260px
+}
+
+.ico.qzone {
+    background-position: 0 -52px
+}
+
+.ico.tsina {
+    background-position: 0 -104px
+}
+
+.ico.tieba {
+    background-position: 0 -728px
+}
+
+.ico.kaixin001 {
+    background-position: 0 -312px
+}
+
+.ico {
+    float: left;
+    font-size: 12px;
+    padding-left: 17px;
+    line-height: 16px;
+    height: 16px;
+    background-image: url(ico.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin: 6px 6px 6px 0
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    position: relative;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ddd
+}
+
+.arrow-up div {
+    position: absolute;
+    left: -8px;
+    top: 2px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #f5f5f5
+}
+
+.loading-wrapper {
+    position: fixed;
+    right: -1px;
+    bottom: -1px;
+    border: 1px solid #ddd;
+    background: white
+}
+
+.loading-wrapper .loading {
+    background: url(../../images/loadinglit.gif) 10px center no-repeat;
+    display: inline-block;
+    padding: 5px;
+    color: black;
+    line-height: 20px;
+    height: 20px;
+    padding-right: 10px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: bold
+}
+
+.nomore {
+    color: #aaa;
+    text-align: center;
+    padding: 0 10px;
+    background: #f5f5f5!important;
+    text-shadow: 1px 1px #fdfdfd;
+    line-height: 30px
+}
+
+.coin {
+    background: url(../images/v3images/icons2.png) no-repeat
+}
+
+.sw-bar {
+    margin-top: 48px;
+    background: white;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #ddd
+}
+
+.sw-bar .sw-btn {
+    width: 60px;
+    color: #666;
+    text-align: center;
+    height: 32px;
+    border-bottom: transparent solid 3px;
+    display: block;
+    float: left;
+    line-height: 35px
+}
+
+.sw-bar .sw-btn + .sw-btn {
+    margin-left: 10px
+}
+
+.sw-bar .sw-btn.on {
+    font-weight: bold;
+    border-bottom: #00a1d6 solid 3px
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst:after,
+.bangumi-dyn-item:after,
+.bangumi-dyn-item .detail .ep-list:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+.stm-ly .stm-lst .frm.tag {
+    color: #bbb
+}
+
+.stm-ly .stm-lst .frm.tag .hint {
+    text-indent: 0
+}
+
+.stm-ly .stm-lst .frm.tag .face {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    width: 48px;
+    height: 48px;
+    border-radius: 4px
+}
+
+.stm-ly .stm-lst .frm.tag .face .b-icon-tag {
+    margin: 17px 0 0 17px
+}
+
+.stm-ly .stm-tag-push-wrp {
+    margin-bottom: 20px;
+    min-height: 248px
+}
+
+.stm-ly .stm-tag-push-wrp .b-loading {
+    height: 120px;
+    padding-right: 20px
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst li.b-no-data {
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    color: #aaa;
+    float: none
+}
+
+.stm-ly .stm-tag-push-wrp .frm {
+    padding: 20px;
+    position: relative
+}
+
+.stm-ly .stm-tag-push-wrp .name {
+    position: relative;
+    padding-bottom: 10px
+}
+
+.stm-ly .stm-tag-push-wrp .name .b-icon.b-icon-tag {
+    vertical-align: middle;
+    margin-right: 10px
+}
+
+.stm-ly .stm-tag-push-wrp .name h2 {
+    font-size: 13px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    line-height: 22px;
+    vertical-align: top
+}
+
+.stm-ly .stm-tag-push-wrp .name span {
+    margin-left: 10px;
+    vertical-align: sub;
+    color: #aaa
+}
+
+.stm-ly .stm-tag-push-wrp .push-random {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: normal;
+    font-size: 12px;
+    cursor: pointer
+}
+
+.stm-ly .stm-tag-push-wrp .push-random:hover {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.stm-ly .stm-tag-push-wrp .push-random:hover .b-icon-refresh {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg)
+}
+
+.stm-ly .stm-tag-push-wrp .push-random .b-icon-refresh {
+    transition: .2s;
+    margin-right: 5px;
+    margin-top: 2px
+}
+
+.stm-ly .stm-tag-push-wrp .push-random em {
+    line-height: 20px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst-wrp {
+    height: 176px;
+    overflow: hidden
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst {
+    zoom: 1;
+    margin-right: -20px
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst li {
+    min-height: 0;
+    float: left;
+    margin: 0 20px 0 0
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst li + li {
+    border-top: 0
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst .v-wrp {
+    width: 170px
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst .v-wrp:hover .t {
+    color: #00a1d6
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst .v-wrp a {
+    display: block
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst .v-wrp .preview {
+    height: 105px;
+    display: block;
+    margin: 0 auto;
+    transition: .2s all linear;
+    background: #333;
+    box-sizing: border-box
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst .v-wrp .preview img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst .v-wrp .t {
+    padding-top: 5px;
+    height: 32px;
+    line-height: 16px;
+    transition: all .2s linear;
+    color: #222;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden
+}
+
+.stm-ly .stm-tag-push-wrp .stm-v-lst .v-wrp .v-from {
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 30px;
+    line-height: 14px;
+    overflow: hidden;
+    color: #aaa;
+    padding-top: 4px
+}
+
+.bangumi-dyn-item {
+    zoom: 1;
+    padding: 20px 20px 0 20px;
+    min-height: 140px
+}
+
+.bangumi-dyn-item:first-child {
+    border: 0
+}
+
+.bangumi-dyn-item .preview {
+    float: left;
+    width: 90px;
+    height: 120px;
+    margin-right: 20px
+}
+
+.bangumi-dyn-item .preview img {
+    width: 100%;
+    height: 100%;
+    display: block
+}
+
+.bangumi-dyn-item .detail .bgm-head {
+    padding-bottom: 12px;
+    height: 20px
+}
+
+.bangumi-dyn-item .detail .bgm-head .t {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: top
+}
+
+.bangumi-dyn-item .detail .bgm-head span {
+    margin-left: 15px;
+    vertical-align: top;
+    margin-top: 3px;
+    color: #aaa;
+    display: inline-block
+}
+
+.bangumi-dyn-item .detail .ep-list {
+    margin-right: -20px;
+    zoom: 1
+}
+
+.bangumi-dyn-item .detail .ep-list .e-item {
+    float: left;
+    margin: 0 20px 20px 0;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: .2s border;
+    position: relative;
+    width: 140px;
+    height: 88px;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #6d757a;
+    text-align: center
+}
+
+.bangumi-dyn-item .detail .ep-list .e-item-p {
+    width: 140px;
+    height: 88px;
+    display: block
+}
+
+.bangumi-dyn-item .detail .ep-list .e-item-new {
+    position: absolute;
+    color: #fff;
+    background-color: #f489ad;
+    border-radius: 6px;
+    width: 35px;
+    text-align: center;
+    height: 18px;
+    line-height: 18px;
+    right: -12px;
+    top: -8px;
+    font-family: Calibri;
+    display: none
+}
+
+.bangumi-dyn-item .detail .ep-list .e-item-t {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    padding-top: 12px;
+    height: 20px;
+    line-height: 20px;
+    background: url(/images/v3images/coverbg.png) 0 0 repeat-x;
+    left: 0
+}
+
+.bangumi-dyn-item .detail .ep-list .e-item:hover {
+    border-color: #00a1d6
+}
+
+.desc {
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    padding-top: 3px;
+    height: auto;
+}

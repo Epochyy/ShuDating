@@ -1,36 +1,29 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@page import="entity.*"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.Iterator" %>
-<%@ page import="dao.DatingDaoImp" %>
-
-<%UserInfo me=(UserInfo)session.getAttribute("user");%>
+<%UserInfo me=(UserInfo) session.getAttribute("user");%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
     <base href="<%=basePath%>">
 
-    <title>My JSP 'ShowFriendNews.jsp' starting page</title>
+    <title>My JSP 'UserNews.jsp' starting page</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
-    <!--
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    -->
     <link href="CSS/info.css" rel=stylesheet type="text/css">
     <link href="CSS/base.css" rel="stylesheet" type="text/css">
     <link href="CSS/page_core.css" rel="stylesheet" type="text/css">
     <link href="CSS/dynamic.css" rel="stylesheet" type="text/css">
     <link href="CSS/search.css" rel="stylesheet" type="text/css">
     <link href="CSS/post.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
@@ -52,7 +45,7 @@
                         <a class="i-link" href="search" title="搜索"><span>搜索速配</span></a>
                     </li>
                     <div class="out">
-                        <li class="i-link"> <a href="#"><%=me.getUsername()%>, 欢迎登录<br></a></li>
+                        <li class="i-link"> <a href="#"><%=me.getUsername() %>, 欢迎登陆<br></a></li>
                         <li class="i-link"> <a href="esc.jsp">注销</a></li>
                     </div>
                 </ul>
@@ -76,7 +69,12 @@
                         </div>
                         <div class="face"><img src="<%=me.getPhoto() %>" alt="这是头像"></div>
                     </div>
-
+                    <div class="sd-l">
+                        <a href="ShowUserInfo.jsp">我的信息<span class="ct"></span></a>
+                        <a href="shownews">我的动态<span class="ct"></span></a>
+                        <a href="showfnews">好友动态<span class="ct"></span></a>
+                        <a href="updateLoveWall.jsp">表白<span class="ct"></span></a>
+                    </div>
                 </div>
 
             </div>
@@ -85,51 +83,25 @@
 
                 <div class="post">
                     <div class="title_area clearfix">
-                        <div class="title"><span class="txt">欢迎来到交友平台</span>
-                            <p class=""><em>愿你能抓住属于自己的缘分</em></p>
+                        <div class="title"><span class="txt">Say your love!</span>
+                            <p class=""><em>直面你</em><em>内心</em><em>的声音吧</em><em>！</em></p>
                         </div>
                     </div>
-                    <img alt="" src="images/logo.jpg" width="600px" height="100px">
+                    <form action="upLoveWall" method="post" id="newsform">
+                        <div class="Pinput">
+                            <textarea class="P_input" name="ly" ></textarea>
+                        </div>
+                        <div class="dia-btn">
+                            <a suda-uatrack="key=tblog_register_page&value=register_now_button" href="javascript:void(0);" action-type="btn_submit" onclick="document.getElementById('newsform').submit();return false">发送</a>
 
+                        </div>
+                    </form>
                 </div>
 
-                <div class="ct">
-                    <ul class="stm-lst">
-                        <%
-                            DatingDaoImp d = new DatingDaoImp();
-                            ArrayList al=(ArrayList) d.getLatestNews();
-                            Iterator iter=al.iterator();
-                            while(iter.hasNext()){
-                                LoveWall ly=(LoveWall)iter.next();
-                        %>
-                        <li data-id="0" class="stm-lst-item">
 
-                            <div class="frm">
-                                <div class="lside">
-                                    <a class="face video" target="_blank">
-                                        <img src="images/<%=ly.getUsername()%>.jpg" alt="好友头像">
-                                    </a>
-                                </div>
 
-                                <div class="rside">
-                                    <div class="name">
-                                        <s:url var="url" action="showfriendinfo">
-                                            <s:param name="friends.username" ><%=ly.getUsername() %></s:param>
-                                        </s:url>
-                                        <s:a href="%{url}" ><%=ly.getUsername() %></s:a><span class="dt"><%=ly.getTime() %></span>
-                                    </div>
 
-                                    <div class="desc">
-                                        <%=ly.getText() %>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </li>
-                        <% }%>
-
-                    </ul>
-                </div>
 
             </div>
             </form>
@@ -141,7 +113,7 @@
 <div class="footer">
     <div class="footer-wrp">
         <div class="footer-cnt clearfix">
-            <em>@夏季小学期项目</em>
+            <em>@夏季课程项目</em>
         </div>
     </div>
 </div>

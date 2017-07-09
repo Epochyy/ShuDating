@@ -2,30 +2,30 @@ package action;
 
 import java.util.Map;
 
-import model.*;
-import db.*;
+import dao.DatingDaoImp;
+import entity.UserInfo;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ShowFriendInfo extends ActionSupport{
-	private User friends;
+	private UserInfo friends;
 
-	public User getFriends() {
+	public UserInfo getFriends() {
 		return friends;
 	}
 
-	public void setFriends(User friends) {
+	public void setFriends(UserInfo friends) {
 		this.friends = friends;
 	}
 	
 	public String execute() throws Exception {
 		try {
-			DB db=new DB();
+			DatingDaoImp db=new DatingDaoImp();
 
 			ActionContext context=ActionContext.getContext(); 
 			Map session=context.getSession();
-			User a=db.getFriendPage(friends);
+			UserInfo a=db.getFriendPage(friends);
 			session.put("friendpage", a);
 			return "success";
 		}

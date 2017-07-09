@@ -4,13 +4,15 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@page import="entity.*"%>
-<%UserInfo ly=(UserInfo) session.getAttribute("user");%>
+
+<%UserInfo ly=(UserInfo)session.getAttribute("friendpage");%>
+<%UserInfo me=(UserInfo)session.getAttribute("user");%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
     <base href="<%=basePath%>">
 
-    <title>My JSP 'ShowUserInfo.jsp' starting page</title>
+    <title>My JSP 'FriendInfo.jsp' starting page</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -43,7 +45,7 @@
                         <a class="i-link" href="search" title="搜索"><span>搜索速配</span></a>
                     </li>
                     <div class="out">
-                        <li class="i-link"> <a href="#"><%=ly.getUsername() %>, 欢迎登陆<br></a></li>
+                        <li class="i-link"> <a href="#"><%=me.getUsername() %>, 欢迎登陆<br></a></li>
                         <li class="i-link"> <a href="esc.jsp">注销</a></li>
                     </div>
                 </ul>
@@ -90,12 +92,6 @@
                             <span>好友动态</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="updateLoveWall.jsp" id="setting">
-                            <i class="al-info"></i>
-                            <span>表白</span>
-                        </a>
-                    </li>
 
 
                 </ul>
@@ -108,7 +104,7 @@
 
         <div class="security-right">
             <div class="sr-t">
-                <span class="tit-b"></span><span class="acc-sec">我的信息（<a href="changeuserinfo.jsp">编辑</a>）</span>
+                <span class="tit-b"></span><span class="acc-sec">TA的信息</span>
 
             </div>
             <div class="sr-b">
@@ -213,7 +209,21 @@
                                 个性标签：
                             </p>
                             <div class="sbi-m">
-                                <%=ly.getLabel1() %>
+                                <%if(ly.getLabel1()==1){ %>
+                                文学青年
+                                <%}if(ly.getLabel2()==1) {%>
+                                、影视音乐
+                                <%}if(ly.getLabel3()==1) {%>
+                                、体育健身
+                                <%}if(ly.getLabel4()==1){ %>
+                                、 游戏娱乐
+                                <%}if(ly.getLabel5()==1) {%>
+                                、 美食专家
+                                <%}if(ly.getLabel6()==1) {%>
+                                、二次元
+                                <%}if(ly.getLabel7()==1) {%>
+                                、学霸无双
+                                <%}%>
                             </div>
                         </div>
                     </li>

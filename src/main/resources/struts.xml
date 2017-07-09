@@ -10,10 +10,10 @@
 			<result name="success">/Login.jsp</result>
 			<result name="error">/register.jsp</result>
 		</action>
-		<!--<action name="changeuserinfo" class="action.changeuserinfo" method="execute">-->
-			<!--<result name="success">/ShowUserInfo.jsp</result>-->
-			<!--<result name="error">/changeuserinfo.jsp</result>-->
-		<!--</action>-->
+		<action name="changeuserinfo" class="action.changeuserinfo" method="execute">
+			<result name="success">/ShowUserInfo.jsp</result>
+			<result name="error">/changeuserinfo.jsp</result>
+		</action>
 		<action name="updatenews" class="action.UpdateNews" method="execute">
 			<result type= "chain" name="success"><param name="actionName">shownews</param></result>
 			<result name="error">/LoginFail.jsp</result>
