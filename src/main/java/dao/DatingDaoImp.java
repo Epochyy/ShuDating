@@ -59,7 +59,7 @@ public class DatingDaoImp implements DatingDao{
             userInfo.setGender(userInfo.getGender());
             userInfo.setAge(userInfo.getAge());
             userInfo.setSexlike(userInfo.getSexlike());
-            userInfo.setPhone(userInfo.getPhoto());
+            userInfo.setPhone(userInfo.getPhone());
             userInfo.setPhoto(userInfo.getPhoto());
             session.save(userInfo);
             ts.commit();

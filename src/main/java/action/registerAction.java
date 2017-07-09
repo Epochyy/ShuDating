@@ -43,26 +43,18 @@ public class registerAction {
 	public void setUser(UserInfo user) {
 		this.user = user;
 	}
-	/*public void validate() { //手工方式验证登录的时候用户名密码是否是空
-		if (user.getUsername() == null || user.getUsername().trim().equals("")) {
-			addFieldError("user.username", "请输入用户名");
-		}
-		if (user.getPassword() == null ||user.getPassword().trim().equals("")) {
-			addFieldError("user.password", "请输入密码");
-		}
-   }*/
 	public String execute() throws Exception {
 		try {
 			DatingDaoImp db = new DatingDaoImp();
 			int i=uploadFileName.lastIndexOf(".");//原名称里倒数第一个"."在哪里 
 			String ext=uploadFileName.substring(i+1);//取得后缀，及"."后面的字符 
 			uploadFileName=user.getUsername()+"."+ext;//拼凑而成 
-			user.setPhoto("images/"+uploadFileName);
+			user.setPhoto("http://localhost:8080/images/"+uploadFileName);
 			if(db.addUser(user)){
 				if(upload!=null){
 					
 					InputStream is=new FileInputStream(getUpload());
-					OutputStream os=new FileOutputStream("E:\\Tomcat 9.0\\webapps\\ROOT\\images\\"+uploadFileName);
+					OutputStream os=new FileOutputStream("E:\\Tomcat 9.0\\webapps\\ROOT\\images"+uploadFileName);
 					OutputStream os2=new FileOutputStream("F:\\JavaEE\\dating\\src\\main\\webapp\\images\\"+uploadFileName);
 					byte buffer[]=new byte[1024];   
 					int count=0;

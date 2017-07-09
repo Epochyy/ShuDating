@@ -101,7 +101,7 @@ public class changeuserinfo extends ActionSupport{
 				 */
 				OutputStream os=new FileOutputStream("F:\\JavaEE\\dating\\src\\main\\webapp\\images\\"+uploadFileName);
 				OutputStream os2=new FileOutputStream("E:\\Tomcat 9.0\\webapps\\ROOT\\images\\"+uploadFileName);
-				byte buffer[]=new byte[1024];   
+				byte buffer[]=new byte[20480];
 				int count=0;
 
 				while((count=is.read(buffer))>0){
