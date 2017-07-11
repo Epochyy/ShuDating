@@ -47,14 +47,22 @@ public class changeuserinfo extends ActionSupport{
 		int i=uploadFileName.lastIndexOf(".");//原名称里倒数第一个"."在哪里 
 		String ext=uploadFileName.substring(i+1);//取得后缀，及"."后面的字符 
 		uploadFileName=user.getUsername()+"."+ext;//拼凑而成 
-		user.setPhoto("http://localhost:8080/images/"+uploadFileName);
+		user.setPhoto("/images/"+uploadFileName);
 		System.out.print(user.getQq());
 
+		if(user.getSexlike()==null)
+		{
+			user.setSexlike("");
+		}
 		if(!user.getSexlike().equals(user1.getSexlike()))
 		{
 
 			DatingDaoImp a=new DatingDaoImp();
 			a.alterSexLike(user.getSexlike(),user);
+		}
+		if(user.getPhoto()==null)
+		{
+			user.setPhoto("");
 		}
 		if(!user.getPhoto().equals(user1.getPhoto()))
 		{
@@ -62,28 +70,50 @@ public class changeuserinfo extends ActionSupport{
 			DatingDaoImp a=new DatingDaoImp();
 			a.alterPhoto(user.getPhoto(),user);
 		}
+		if(user.getQq()==null)
+		{
+			user.setQq("");
+		}
 		if(!user.getQq().equals(user1.getQq()))
 		{
 
 			DatingDaoImp a=new DatingDaoImp();
 			a.alterQq(user.getQq(),user);
 		}
-		if(!user.getLabel1().equals(user1.getLabel1()))
+
+		if(user.getLabel1()==null)
+		{
+			user.setLabel1("");
+		}
+		if(!user1.getLabel1().equals("")&&user1.getLabel1()!=null)
+		//if(!user1.getLabel1().equals("")&&user1.getLabel1()!=null)
 		{
 			String item=user.getLabel1();
 			String[] items = item.split(", ");
 			DatingDaoImp a=new DatingDaoImp();
 			a.alterLables(items,user);
 		}
+		if(user.getPhone()==null)
+		{
+			user.setPhone("");
+		}
 		if(!user.getPhone().equals(user1.getPhone()))
 		{
 			DatingDaoImp a=new DatingDaoImp();
 			a.alterPhone(user.getPhone(),user);
 		}
+		if(user.getMotto()==null)
+		{
+			user.setMotto("");
+		}
 		if(!user.getMotto().equals(user1.getMotto()))
 		{
 			DatingDaoImp a=new DatingDaoImp();
 			a.alterMotto(user.getMotto(),user);
+		}
+		if(user.getRequirement()==null)
+		{
+			user.setRequirement("");
 		}
 		if(!user.getRequirement().equals(user1.getRequirement()))
 		{
@@ -100,7 +130,7 @@ public class changeuserinfo extends ActionSupport{
 				修改路径
 				 */
 				OutputStream os=new FileOutputStream("F:\\JavaEE\\dating\\src\\main\\webapp\\images\\"+uploadFileName);
-				OutputStream os2=new FileOutputStream("E:\\Tomcat 9.0\\webapps\\ROOT\\images\\"+uploadFileName);
+				OutputStream os2=new FileOutputStream("E:\\Tomcat9\\webapps\\ROOT\\images\\"+uploadFileName);
 				byte buffer[]=new byte[20480];
 				int count=0;
 

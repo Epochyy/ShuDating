@@ -20,8 +20,6 @@ public class SearchAction extends ActionSupport{
 			UserInfo usr = null;
 			usr = (UserInfo) session.get("user");
 			String[] items = item.split(", ");
-			System.out.println(items[0] + "ksk");
-			System.out.println(items[1] + "ksk");
 			DatingDao dbCon = new DatingDaoImp();
 			list = dbCon.searchUser(usr.getUsername(), items);
 			session.put("list", list);

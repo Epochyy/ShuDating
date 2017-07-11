@@ -49,15 +49,16 @@ public class registerAction {
 			int i=uploadFileName.lastIndexOf(".");//原名称里倒数第一个"."在哪里 
 			String ext=uploadFileName.substring(i+1);//取得后缀，及"."后面的字符 
 			uploadFileName=user.getUsername()+"."+ext;//拼凑而成 
-			user.setPhoto("http://localhost:8080/images/"+uploadFileName);
+			user.setPhoto("/images/"+uploadFileName);
 			if(db.addUser(user)){
 				if(upload!=null){
 					
 					InputStream is=new FileInputStream(getUpload());
-					OutputStream os=new FileOutputStream("E:\\Tomcat 9.0\\webapps\\ROOT\\images"+uploadFileName);
+					OutputStream os=new FileOutputStream("E:\\Tomcat9\\webapps\\ROOT\\images\\"+uploadFileName);
 					OutputStream os2=new FileOutputStream("F:\\JavaEE\\dating\\src\\main\\webapp\\images\\"+uploadFileName);
 					byte buffer[]=new byte[1024];   
 					int count=0;
+
 					while((count=is.read(buffer))>0){
 						os.write(buffer,0,count);
 						os2.write(buffer,0,count);

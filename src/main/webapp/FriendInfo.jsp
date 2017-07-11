@@ -137,7 +137,7 @@
                                 头像：
                             </p>
                             <div class="sbi-m">
-                                <img src="<%=ly.getPhoto()%>" width="200px" height="200px">
+                                <img src="images/<%=ly.getUsername()%>.jpg" width="200px" height="200px">
                             </div>
                         </div>
                     </li>

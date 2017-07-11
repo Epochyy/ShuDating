@@ -9,7 +9,6 @@
 <%@ page import="java.util.Iterator" %>
 <%@ page import="dao.DatingDaoImp" %>
 
-<%UserInfo me=(UserInfo)session.getAttribute("user");%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -38,6 +37,9 @@
     <div class="z_top">
         <div class="z_header">
             <div class="z_top_nav">
+                <%
+                    UserInfo me=(UserInfo)session.getAttribute("user");
+                %>
                 <ul>
                     <li class="home">
                         <a class="i-link" href="showlnews" title="首页"><span>首页</span></a>
@@ -74,7 +76,7 @@
 
                             </div>
                         </div>
-                        <div class="face"><img src="<%=me.getPhoto() %>" alt="这是头像"></div>
+                        <div class="face"><img src="images/<%=me.getUsername() %>.jpg" alt="这是头像"></div>
                     </div>
 
                 </div>

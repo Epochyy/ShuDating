@@ -70,7 +70,7 @@
 
                             </div>
                         </div>
-                        <div class="face"><img src="<%=me.getPhoto() %>" alt="这是头像"></div>
+                        <div class="face"><img src="images/<%=me.getUsername() %>.jpg" alt="这是头像"></div>
                     </div>
                     <div class="sd-l">
                         <a href="ShowUserInfo.jsp">我的信息<span class="ct"></span></a>

@@ -61,6 +61,11 @@ public class DatingDaoImp implements DatingDao{
             userInfo.setSexlike(userInfo.getSexlike());
             userInfo.setPhone(userInfo.getPhone());
             userInfo.setPhoto(userInfo.getPhoto());
+            userInfo.setMotto("");
+            userInfo.setQq("");
+            userInfo.setRequirement("");
+            userInfo.setLabel1("");
+
             session.save(userInfo);
             ts.commit();
         } catch(Exception e) {
@@ -328,7 +333,8 @@ public class DatingDaoImp implements DatingDao{
             Labels += u.getLabel1();
         }
         for(int i=0;i<s;i++) {
-            Labels+=labels[i]+";";
+            if(!Labels.contains(labels[i]))
+                Labels+=labels[i]+";";
         }
         try {
             ts = session.beginTransaction();
@@ -601,8 +607,8 @@ public class DatingDaoImp implements DatingDao{
         try {
             ts = session.beginTransaction();
             Query query = session.createQuery("update Mail m set m.ifread=1 where m.sender=:sid and m.receiver=:rid");
-            query.setInteger("sid", user1.getId());
-            query.setInteger("rid", user2.getId());
+            query.setInteger("sid", user2.getId());
+            query.setInteger("rid", user1.getId());
             query.executeUpdate();
             ts.commit();
         } catch(Exception e) {

@@ -74,7 +74,7 @@
 
                             </div>
                         </div>
-                        <div class="face"><img src="<%=me.getPhoto() %>" alt="这是头像"></div>
+                        <div class="face"><img src="images/<%=me.getUsername() %>.jpg" alt="这是头像"></div>
                     </div>
 
                 </div>
@@ -107,7 +107,7 @@
                                     <div class="section fans" id="fans-list">
                                         <div class="content" style="position:relative;text-align:left;padding-left:5px;">
                                             <div class="list-item clearfix">
-                                                <img  src="/images/<s:property value="#items.username"/>.jpg" class="head_portrait" style="margin-top:0px;margin-bottom:3px;">
+                                                <img  src="images/<s:property value="#items.username"/>.jpg" class="head_portrait" style="margin-top:0px;margin-bottom:3px;">
                                                 <s:url var="url" action="showfriendinfo">
                                                     <s:param name="friends.username"  value="#items.username"></s:param>
                                                 </s:url>

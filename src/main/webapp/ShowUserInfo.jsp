@@ -4,7 +4,7 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@page import="entity.*"%>
-<%UserInfo ly=(UserInfo) session.getAttribute("user");%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -29,6 +29,9 @@
     <div class="z_top">
         <div class="z_header">
             <div class="z_top_nav">
+                <%
+                    UserInfo ly=(UserInfo) session.getAttribute("user");
+                %>
                 <ul>
                     <li class="home">
                         <a class="i-link" href="showlnews" title="首页"><span>首页</span></a>
@@ -141,7 +144,7 @@
                                 头像：
                             </p>
                             <div class="sbi-m">
-                                <img src="<%=ly.getPhoto()%>" width="200px" height="200px">
+                                <img src="images/<%=ly.getUsername() %>.jpg" width="200px" height="200px">
                             </div>
                         </div>
                     </li>

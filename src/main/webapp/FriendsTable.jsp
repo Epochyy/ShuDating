@@ -2,6 +2,7 @@
          pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"  %>
 <%@page import="entity.*"%>
+<%@ page import="dao.DatingDaoImp" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%UserInfo me=(UserInfo)session.getAttribute("user");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -71,7 +72,9 @@
 
 
                         while(iter1.hasNext()){
-                            UserInfo friend =(UserInfo)iter1.next();
+                            DatingDaoImp da=new DatingDaoImp();
+                            Friend f=(Friend)iter1.next();
+                            UserInfo friend=da.getUserById(f.getId2());
                             int flag=1;
                             Iterator iter2=a2.iterator(); //迭代器iter
                             while(iter2.hasNext()){
@@ -92,7 +95,7 @@
                     </style>
                     <div class="content">
                         <div class="list-item clearfix">
-                            <img alt="nickname" src="<%=friend.getPhoto() %>" class="head_portrait">
+                            <img alt="nickname" src="images/<%=friend.getUsername() %>.jpg" class="head_portrait">
                             <s:url var="url66" action="showfriendinfo">
                                 <s:param name="friends.username" ><%=friend.getUsername() %></s:param>
                             </s:url>
@@ -121,7 +124,7 @@
                     {%>
                     <div class="content">
                         <div class="list-item clearfix">
-                            <img alt="nickname" src="<%=friend.getPhoto() %>" class="head_portrait">
+                            <img alt="nickname" src="images/<%=friend.getUsername() %>.jpg" class="head_portrait">
                             <a class="title" href="ShowUserInfo.jsp" target="_blank">
                                 <span class="fans-name"><%=friend.getUsername() %>&nbsp;</span> </a>
                             <span><%=friend.getGender() %>&nbsp;</span>

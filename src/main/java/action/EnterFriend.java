@@ -26,13 +26,8 @@ public class EnterFriend extends ActionSupport {
 			ActionContext context = ActionContext.getContext();
 			Map session = context.getSession();
 			UserInfo user1 = (UserInfo) session.get("user");
-			ArrayList a1 = (ArrayList) db.getAllFriend(user1);
-			ArrayList fl=new ArrayList<UserInfo>();
-			for (Object item:
-				 a1) {
-				fl.add(db.getUserById(((Friend) item).getId2()));
-			}
-			session.put("friendstable", fl);
+			ArrayList<Friend> al = (ArrayList) db.getAllFriend(user1);
+			session.put("friendstable", al);
 			ArrayList a = (ArrayList) db.getReceiveMail(user1);
 			session.put("mail", a);
 			return "success";

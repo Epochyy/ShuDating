@@ -25,7 +25,7 @@ public class ShowMessage extends ActionSupport {
 			ActionContext context = ActionContext.getContext();
 			Map session = context.getSession();
 			int friendid = friends.getId();
-			UserInfo myfriend = new UserInfo();
+			UserInfo myfriend ;
 			myfriend = db.getUserById(friendid);
 			session.put("friend", myfriend);
 			UserInfo user1 = (UserInfo) session.get("user");
